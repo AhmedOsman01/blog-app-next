@@ -33,7 +33,6 @@ export async function POST(req) {
   const body = JSON.stringify(payload);
 
   let evt;
-
   // Verify payload with headers
   try {
     evt = wh.verify(body, {

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 let initialized = false;
 
-export default async function connectDB() {
+export default async function connect() {
   mongoose.set("strict", true);
   if (initialized) {
     console.log("DB connection already connected.");
