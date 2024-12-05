@@ -14,7 +14,7 @@ export default function Home() {
             Empowering businesses and communities with cutting-edge solutions.
           </p>
           <Link
-            href="/services"
+            href="/"
             className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition"
           >
             Explore Services
