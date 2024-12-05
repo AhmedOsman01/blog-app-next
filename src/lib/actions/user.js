@@ -1,6 +1,6 @@
-import User from "../models/user.model.js";
+import User from "../models/user.model";
 
-import { connect } from "../mongodb/mongoose.js";
+import { connect } from "../mongodb/mongoose";
 
 export const createOrUpdateUser = async (
   id,
@@ -12,7 +12,6 @@ export const createOrUpdateUser = async (
 ) => {
   try {
     await connect();
-
     const user = await User.findOneAndUpdate(
       { clerkId: id },
       {
@@ -28,8 +27,7 @@ export const createOrUpdateUser = async (
     );
     return user;
   } catch (error) {
-    console.error(error);
-    throw new Error("Failed to create or update user");
+    console.error("Failed to create or update user", error);
   }
 };
 
@@ -37,9 +35,7 @@ export const deleteUser = async (id) => {
   try {
     await connect();
     await User.findOneAndDelete({ clerkId: id });
-    return true;
   } catch (error) {
-    console.error(error);
-    throw new Error("Failed to delete user");
+    console.error("Failed to delete user", error);
   }
 };
